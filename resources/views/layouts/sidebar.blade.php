@@ -55,7 +55,7 @@
                 </li>
                 <li class="nav-item menu-open">
                     <a href="#" class="nav-link  {{request()->is('administration/questions*') ? 'active' : ''}}">
-                        <i class="nav-icon fas fa-book "></i>
+                        <i class="nav-icon fas fa-table"></i>
                         <p>
                             Quản lý câu hỏi
                             <i class="right fas fa-angle-left"></i>
@@ -78,7 +78,7 @@
                 </li>
                 <li class="nav-item menu-open">
                     <a href="#" class="nav-link {{request()->is('administration/config-testing*') ? 'active' : ''}}">
-                        <i class="nav-icon fas fa-book"></i>
+                        <i class="nav-icon fas fa-copy"></i>
                         <p>
                             Cấu hình bài Test
                             <i class="right fas fa-angle-left"></i>

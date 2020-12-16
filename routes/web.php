@@ -29,7 +29,7 @@ Route::group(['prefix' => 'administration','middleware' => ['auth']], function (
     });
     
     Route::get('', function () {
-        return view('layouts.master');
+        return view('dashboard');
     });
 });
 // web page
