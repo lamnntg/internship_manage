@@ -51,6 +51,10 @@ class ExamConfigController extends Controller
      */
     public function store(ExamConfigRequest $request)
     {
+        if ($request->question_category_id == NULL) {
+            flash('Nhập cấu hình bài test')->error();
+            return back()->withInput();
+        }
         $ExamConfig = ExamConfig::create([
             'name' => $request->name,
             'created_by' => Auth::id(),
@@ -67,6 +71,7 @@ class ExamConfigController extends Controller
             ];
         }
         ExamConfigDetail::insert($ExamConfigDetail);
+        flash('Tạo cấu hình bài test thành công')->success();
         return redirect()->route("config-testing.index");
     }
     /**

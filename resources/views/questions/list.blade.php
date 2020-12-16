@@ -4,9 +4,18 @@
     <div class="card-header">
         <h1 class="text-center card-title">LIST QUESTION</h1>
     </div>
+
     <div class="card-body">
-        <div><a href="{{route("questions.create")}}" class="btn btn-info pull-right">CREATE QUESTION</a></div>
-        <table class="table table-striped">
+        <div class="d-flex justify-content-between row " >
+            <form class="d-flex justify-content-between col-6" method="GET" action="{{ route('questions.index') }}">
+                <div class="mb-2 col">
+                    <input type="text" class="form-control" placeholder="Question" name="question">
+                </div>
+                <button type="submit" class="btn btn-primary mb-2">Tìm kiếm</button>
+            </form>
+            <div><a href="{{route("questions.create")}}" class="btn btn-outline-info pull-right">CREATE QUESTION</a></div>
+        </div>
+        <table class="table table-bordered table-hover">
             <thead>
             <tr>
                 <th class="text-center">No</th>
@@ -15,8 +24,6 @@
                 <th class="text-center">Answer Type</th>
                 <th class="text-center">Check Point Flag</th>
                 <th class="text-center">Interview Flag</th>
-                <th class="text-center">Created By</th>
-                <th class="text-center">Updated By</th>
                 <th class="text-center">Action</th>
             </tr>
             </thead>
@@ -29,11 +36,14 @@
                     <th class="text-center">{{ \App\Models\Question::$typeAnswers[$question->answer_type]}}</th>
                     <th class="text-center">{{ $question->check_point_flg == 1  ? 'Yes' : 'No'}}</th>
                     <th class="text-center">{{ $question->interview_flg == 1  ? 'Yes' : 'No'}}</th>
-                    <th class="text-center">{{ $question->created_by}}</th>
-                    <th class="text-center">{{ $question->updated_by}}</th>
                     <th scope="col" class="d-flex justify-content-between">
-                        <a href="{{route("questions.edit", $question-> id)}}" class="btn btn-info btn-sm" role="button">Edit</a>
-                        <button type="button" class="btn btn-danger delete-confirm-btn btn-sm" data-toggle="modal" data-target="#exampleModalCenter" data-id="{{$question-> id}}">
+                        <a href="{{route("questions.edit", $question-> id)}}" class="btn btn-info mb-1" role="button">Edit</a>
+                        @if ($question->answer->first()==NULL)
+                            <a href="{{route("answer.show", $question-> id)}}" class="btn btn-outline-primary mb-1" role="button">Create Answer</a>
+                        @else
+                            <a href="{{route("answer.edit", $question-> id)}}" class="btn btn-outline-primary mb-1" role="button">Update Answer</a>
+                        @endif
+                        <button type="button" class="btn btn-danger delete-confirm-btn mb-1" data-toggle="modal" data-target="#exampleModalCenter" data-id="{{$question-> id}}">
                             Delete
                         </button>
                     </th>
@@ -41,6 +51,9 @@
                 @endforeach
             </tbody>
         </table>
+    </div>
+    <div>
+        <span class="d-flex flex-row-reverse bd-highlight">{{ $questions->appends(request()->query())->links() }}</span> 
     </div>
     <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
@@ -64,9 +77,6 @@
             </div>
         </div>
         </div>
-    </div>
-    <div>
-        <span class="d-flex flex-row-reverse bd-highlight">{{ $questions->links() }}</span> 
     </div>
 </div> 
 @endsection

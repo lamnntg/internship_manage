@@ -2,10 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Candidate;
+use App\Models\Exam;
+use App\Models\ExamConfig;
 use Illuminate\Http\Request;
+use App\Services\ExamServiceInterface;
 
 class ExamController extends Controller
 {
+    public function __construct(ExamServiceInterface $examService)
+    {
+        $this->examService = $examService;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +21,8 @@ class ExamController extends Controller
      */
     public function index()
     {
-        //
+        $candidates = Candidate::paginate();
+        return view("test-online.list-candidate", compact('candidates'));
     }
 
     /**
@@ -25,7 +34,11 @@ class ExamController extends Controller
     {
         //
     }
-
+    public function createExam($candidateId)
+    {
+        $examConfigurations = ExamConfig::all();
+        return view('test-online.create', compact('candidateId','examConfigurations'));
+    }
     /**
      * Store a newly created resource in storage.
      *
@@ -34,7 +47,15 @@ class ExamController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        foreach ($request->exam_config_id as $key => $valueExamConfig) {
+            $examConfigDetails = ExamConfig::find($valueExamConfig)->examConfigDetails;
+            $testOnline = $this->examService->createTestOnline($valueExamConfig, $request->candidate_id, $request->exam_type[$key]);
+            foreach ($examConfigDetails as $key => $examConfigDetail) {
+                $questionList =  $this->examService->randomQuestions($examConfigDetail);
+                $this->examService->storeQuestionToTestOnline($testOnline->id, $questionList);
+            }
+        }
+        return redirect()->route("test-online.index");
     }
 
     /**
@@ -43,9 +64,10 @@ class ExamController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($candidateId)
     {
-        //
+        $testsOnline = Exam::where('candidate_id', $candidateId)->get();
+        return view('test-online.index',compact('testsOnline','candidateId') );
     }
 
     /**

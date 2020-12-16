@@ -6,7 +6,7 @@
     <header>
         @include('candidate.layoutsCandidate.header')
     </header>
-    <form class="container" method="post" action="{{ route('list-candidate.store') }}">
+    <form class="container" method="post" action="{{ route('candidates.store') }}">
         @csrf
         @include('candidate.formCandidate.form_candidate')
     </form>

@@ -44,7 +44,7 @@
       
       <div class="container-fluid">
         <div class="d-flex align-items-center">
-          <div class="site-logo mr-auto w-25"><a href="index.html">OneSchool</a></div>
+          <div class="site-logo mr-auto w-25"><a href="{{url("http://localhost:8000")}}">OneSchool</a></div>
 
           <div class="mx-auto text-center">
             <nav class="site-navigation position-relative text-right" role="navigation">
@@ -66,37 +66,33 @@
           </div>
         </div>
       </div>
-      
     </header>
-
     <div class="intro-section" id="home-section">
-      
-      <div class="slide-1" style="background-image: url('images/hero_1.jpg');" data-stellar-background-ratio="0.5">
+      <div class="slide-1" style=" background-image: url('{{asset('web/images/hero_1.jpg')}}');" data-stellar-background-ratio="0.5">
         <div class="container">
           <div class="row align-items-center">
             <div class="col-12">
               <div class="row align-items-center">
                 <div class="col-lg-6 mb-4">
                   <h1  data-aos="fade-up" data-aos-delay="100">Learn From The Expert</h1>
-                  <p class="mb-4"  data-aos="fade-up" data-aos-delay="200">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime ipsa nulla sed quis rerum amet natus quas necessitatibus.</p>
-                  <p data-aos="fade-up" data-aos-delay="300"><a href="#" class="btn btn-primary py-3 px-5 btn-pill">Admission Now</a></p>
-
+                  <p data-aos="fade-up" data-aos-delay="300"><a href="{{route('login_1')}}" class="btn btn-primary py-3 px-5 btn-pill">Administration Page</a></p>
+                  <p class="mb-4"  data-aos="fade-up" data-aos-delay="200">@include('flash::message')</p>
                 </div>
 
                 <div class="col-lg-5 ml-auto" data-aos="fade-up" data-aos-delay="500">
-                  <form action="" method="post" class="form-box">
-                    <h3 class="h4 text-black mb-4">Sign In</h3>
+                  <form action="{{route('login-candidate')}}" method="GET" class="form-box">
+                  
+                    <h3 class="h4 text-black mb-4">Sign In For Candidate</h3>
                     <div class="form-group">
-                      <input type="text" class="form-control" placeholder="User Name">
+                      <input type="text" name="user_name" class="form-control" placeholder="User Name">
                     </div>
                     <div class="form-group">
-                      <input type="password" class="form-control" placeholder="Password">
+                      <input type="password" name="password" class="form-control" placeholder="Password">
                     </div>
                     <div class="form-group">
                       <input type="submit" class="btn btn-primary btn-pill" value="Sign in">
                     </div>
                   </form>
-
                 </div>
               </div>
             </div>
@@ -227,132 +223,51 @@
         </div>
       </div>
     </div>
-
-    <div class="site-section bg-image overlay" style="background-image: url('images/hero_1.jpg');">
-      <div class="container">
-        <div class="row justify-content-center align-items-center">
-          <div class="col-md-8 text-center testimony">
-            <img src="{{asset("web/images/person_4.jpg")}}" alt="Image" class="img-fluid w-25 mb-4 rounded-circle">
-            <h3 class="mb-4">Jerome Jensen</h3>
-            <blockquote>
-              <p>&ldquo; Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum rem soluta sit eius necessitatibus voluptate excepturi beatae ad eveniet sapiente impedit quae modi quo provident odit molestias! Rem reprehenderit assumenda &rdquo;</p>
-            </blockquote>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="site-section pb-0">
-
-      <div class="future-blobs">
-        <div class="blob_2">
-          <img src="{{asset("web/images/blob_2.svg")}}" alt="Image">
-        </div>
-        <div class="blob_1">
-          <img src="{{asset("web/images/blob_1.svg")}}" alt="Image">
-        </div>
-      </div>
-      <div class="container">
-        <div class="row mb-5 justify-content-center" data-aos="fade-up" data-aos-delay="">
-          <div class="col-lg-7 text-center">
-            <h2 class="section-title">Why Choose Us</h2>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-4 ml-auto align-self-start"  data-aos="fade-up" data-aos-delay="100">
-
-            <div class="p-4 rounded bg-white why-choose-us-box">
-
-              <div class="d-flex align-items-center custom-icon-wrap custom-icon-light mb-3">
-                <div class="mr-3"><span class="custom-icon-inner"><span class="icon icon-graduation-cap"></span></span></div>
-                <div><h3 class="m-0">22,931 Yearly Graduates</h3></div>
-              </div>
-
-              <div class="d-flex align-items-center custom-icon-wrap custom-icon-light mb-3">
-                <div class="mr-3"><span class="custom-icon-inner"><span class="icon icon-university"></span></span></div>
-                <div><h3 class="m-0">150 Universities Worldwide</h3></div>
-              </div>
-
-              <div class="d-flex align-items-center custom-icon-wrap custom-icon-light mb-3">
-                <div class="mr-3"><span class="custom-icon-inner"><span class="icon icon-graduation-cap"></span></span></div>
-                <div><h3 class="m-0">Top Professionals in The World</h3></div>
-              </div>
-
-              <div class="d-flex align-items-center custom-icon-wrap custom-icon-light mb-3">
-                <div class="mr-3"><span class="custom-icon-inner"><span class="icon icon-university"></span></span></div>
-                <div><h3 class="m-0">Expand Your Knowledge</h3></div>
-              </div>
-
-              <div class="d-flex align-items-center custom-icon-wrap custom-icon-light mb-3">
-                <div class="mr-3"><span class="custom-icon-inner"><span class="icon icon-graduation-cap"></span></span></div>
-                <div><h3 class="m-0">Best Online Teaching Assistant Courses</h3></div>
-              </div>
-
-              <div class="d-flex align-items-center custom-icon-wrap custom-icon-light">
-                <div class="mr-3"><span class="custom-icon-inner"><span class="icon icon-university"></span></span></div>
-                <div><h3 class="m-0">Best Teachers</h3></div>
-              </div>
-
-            </div>
-
-
-          </div>
-          <div class="col-lg-7 align-self-end"  data-aos="fade-left" data-aos-delay="200">
-            <img src="{{asset("web/images/person_transparent.png")}}" alt="Image" class="img-fluid">
-          </div>
-        </div>
-      </div>
-    </div>
-
-    
-
-
-
+  
     <div class="site-section bg-light" id="contact-section">
       <div class="container">
 
         <div class="row justify-content-center">
           <div class="col-md-7">
-
-
-            
             <h2 class="section-title mb-3">Message Us</h2>
-            <p class="mb-5">Natus totam voluptatibus animi aspernatur ducimus quas obcaecati mollitia quibusdam temporibus culpa dolore molestias blanditiis consequuntur sunt nisi.</p>
+            <p class="mb-5">Bạn có thể để lại thông tin chúng tôi sẽ liên lạc với bạn</p>
           
-            <form method="post" data-aos="fade">
+            <form method="POST" action="{{route("register-candidate.store")}}" data-aos="fade">
+              @csrf
               <div class="form-group row">
                 <div class="col-md-6 mb-3 mb-lg-0">
-                  <input type="text" class="form-control" placeholder="First name">
+                  <input required type="text" name="full_name" class="form-control @error('full_name') is-invalid @enderror" placeholder="Full Name:" value="{{old("full_name")}}">
+                  <p class="invalid-feedback text-danger">{{ $errors->first('full_name') }}</p>
                 </div>
                 <div class="col-md-6">
-                  <input type="text" class="form-control" placeholder="Last name">
+                  <input required type="date" name="birthday" class="form-control @error('birthday') is-invalid @enderror" placeholder="Birthday:" value="{{old("birthday")}}">
+                  <p class="invalid-feedback text-danger">{{ $errors->first('birthday') }}</p>
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-md-12">
+                  <input required type="text" name="address" class="form-control @error('address') is-invalid @enderror" placeholder="Address:" value="{{old("address")}}">
+                  <p class="invalid-feedback text-danger">{{ $errors->first('address') }}</p>
                 </div>
               </div>
 
               <div class="form-group row">
                 <div class="col-md-12">
-                  <input type="text" class="form-control" placeholder="Subject">
-                </div>
-              </div>
-
-              <div class="form-group row">
-                <div class="col-md-12">
-                  <input type="email" class="form-control" placeholder="Email">
+                  <input required type="email" name="email" class="form-control @error('email') is-invalid @enderror" placeholder="Email:" value="{{old("email")}}">
+                  <p class="invalid-feedback text-danger">{{ $errors->first('email') }}</p>
                 </div>
               </div>
               <div class="form-group row">
                 <div class="col-md-12">
-                  <textarea class="form-control" id="" cols="30" rows="10" placeholder="Write your message here."></textarea>
+                  <input required type="text" name="phone" class="form-control @error('phone') is-invalid @enderror" placeholder="Number Phone:" value="{{old("phone")}}">
+                  <p class="invalid-feedback text-danger">{{ $errors->first('phone') }}</p>
                 </div>
               </div>
-
               <div class="form-group row">
                 <div class="col-md-6">
-                  
-                  <input type="submit" class="btn btn-primary py-3 px-5 btn-block btn-pill" value="Send Message">
+                  <button type="submit" class="btn btn-primary py-3 px-5 btn-block btn-pill"> Send Message</button>
                 </div>
               </div>
-
             </form>
           </div>
         </div>
@@ -409,7 +324,6 @@
   
     
   </div> <!-- .site-wrap -->
-
   <script src="{{asset("web/js/jquery-3.3.1.min.js")}}"></script>
   <script src="{{asset("web/js/jquery-migrate-3.0.1.min.js")}}"></script>
   <script src="{{asset("web/js/jquery-ui.js")}}"></script>

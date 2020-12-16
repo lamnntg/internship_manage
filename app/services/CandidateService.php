@@ -20,6 +20,7 @@ class CandidateService implements CandidateServiceInterface
      */
     public function createCandidate($params)
     {
+       
         $candidate = new Candidate();
         $candidate->id = (string)Str::uuid();
         $candidate->full_name = $params['full_name'];
@@ -73,7 +74,9 @@ class CandidateService implements CandidateServiceInterface
         $candidate->address = $params['address'] ?? null;
         $candidate->phone = $params['phone'];
         $candidate->email = $params['email'];
-        $candidate->user_name = $params['user_name'] ?? null;
+        if (array_key_exists('user_name',$params)) {
+            $candidate->user_name = $params['user_name'] ;
+        }
         $candidate->password = Hash::make($params['password']) ?? null;
         $candidate->updated_by = Auth::id();
         $candidate->status = $params['status'];

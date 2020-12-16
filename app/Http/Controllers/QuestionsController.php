@@ -9,6 +9,7 @@ use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\Question;
+use App\Services\QuestionServiceInterface;
 
 class QuestionsController extends Controller
 {
@@ -17,10 +18,15 @@ class QuestionsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $questions = Question::orderBy('id')->paginate(20);
-        return view('questions.list', ['questions' => $questions]);
+        $question = $request['question'];
+        if (isset($question)) {
+            $questions = Question::where('question', 'like', "%$question%")->paginate();
+        } else {
+            $questions = Question::paginate();
+        }
+        return view('questions.list', compact('questions'));
     }
 
     /**
@@ -59,6 +65,7 @@ class QuestionsController extends Controller
             'updated_at' => now(),
             'created_by' => Auth::id(),
         ]);
+        flash('Create câu hỏi thành công ')->success();
         return redirect()->route("questions.index");
     }
 
@@ -113,6 +120,7 @@ class QuestionsController extends Controller
             'created_at' => now(),
             'updated_at' => now(),
         ]);
+        flash('Update câu hỏi thành công ')->success();
         return redirect()->route("questions.index");
     }
 
@@ -125,6 +133,7 @@ class QuestionsController extends Controller
     public function destroy($id)
     {
         Question::findOrFail($id)->delete();
+        flash('Xóa câu hỏi thành công ')->success();
         return redirect()->route('questions.index');
     }
 }

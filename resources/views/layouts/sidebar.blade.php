@@ -46,9 +46,9 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{route('test-online.index')}}" class="nav-link {{request()->is('administration/internship/test-online*') ? 'active' : ''}}">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Tạo bài test</p>
+                                <p>Bài test</p>
                             </a>
                         </li>
                     </ul>

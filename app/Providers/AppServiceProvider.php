@@ -17,6 +17,14 @@ class AppServiceProvider extends ServiceProvider
             \App\Services\CandidateServiceInterface::class,
             \App\Services\CandidateService::class,
         );
+        $this->app->singleton(
+            \App\Services\ExamServiceInterface::class,
+            \App\Services\ExamService::class,
+        );
+        $this->app->singleton(
+            \App\Services\AnswerServiceInterface::class,
+            \App\Services\AnswerService::class,
+        );
     }
 
     /**

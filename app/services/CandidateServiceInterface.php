@@ -15,4 +15,6 @@ interface CandidateServiceInterface
     public function createCandidate($request);
 
     public function verifyCandidate($id);
+
+    public function getCandidates($request);
 }

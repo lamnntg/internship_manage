@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-
+  
   <div class="card card-primary">
     <h2 class="text-center card-header"> Create Exam Configuration </h2>
     <div class="card-body">

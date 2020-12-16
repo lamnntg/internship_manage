@@ -14,8 +14,12 @@ class CreateExamAnswersTable extends Migration
     public function up()
     {
         Schema::create('exam_answers', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->char('id', 36)->primary();
+            $table->char('exam_question_id', 36);
+            $table->text('answer')->nullable();
+            $table->string('media_url', 255)->nullable();
+            $table->tinyInteger('correct_flag')->nullable();
+            $table->tinyInteger('selected_flg')->nullable();
         });
     }
 

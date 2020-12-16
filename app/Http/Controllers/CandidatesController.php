@@ -66,16 +66,35 @@ class CandidatesController extends Controller
      * @param int $id
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(Request $request, $id)
+    public function update(CandidateRequest $request, $id)
     {
         $data = $request->all();
         $candidate = $this->candidateService->updateCandidate($data, $id);
+        flash('Update ứng viên thành công ')->success();
         return redirect()->route('candidates.index');
     }
 
     public function delete(Request $request)
     {
         $candidate = $this->candidateService->deleteCandidate($request->input('candidate_id'));
+        if ($candidate == null) {
+            flash('Xóa ứng viên thành công.')->success();
+        } else {
+            flash("Xóa thất bại")->error();
+        }
+        return redirect()->route('candidates.index');
+    }
+
+    public function sendEmail($id)
+    {
+        $candidate = Candidate::find($id);
+        $details = [
+            'title' => 'User Name and Password of Website',
+            'user_name' => $candidate->user_name,
+            'link' => route('editPassword', $id),
+        ];
+        \Mail::to($candidate->email)->send(new \App\Mail\MailToCandidate($details));
+        flash('Gửi email cho ứng viên thành công.')->success();
         return redirect()->route('candidates.index');
     }
 }

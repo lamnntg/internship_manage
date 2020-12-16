@@ -619,8 +619,8 @@ h1, h2, h3, h4, h5,
     height: 100vh;
     min-height: 900px; }
   .intro-section.single-cover, .intro-section.single-cover .container > .row {
-    height: 50vh;
-    min-height: 400px; }
+    height: 25vh;
+    min-height: 300px; }
   .intro-section h1 {
     font-size: 2.5rem;
     font-weight: 700;

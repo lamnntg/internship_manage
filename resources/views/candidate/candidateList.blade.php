@@ -51,17 +51,19 @@
                         <tbody>
                         @foreach ($candidates as $candidate)
                             <tr>
-                                <td>{{ $candidate->id }}</td>
+                                <td>{{ $candidate->full_name }}</td>
                                 <td>{{ $candidate->address }}</td>
                                 <td>{{ $candidate->birthday }}</td>
                                 <td>{{ $candidate->phone }}</td>
                                 <td>{{ $candidate->email }}</td>
                                 <td>
                                     <a class="btn btn-primary mb-1"
-                                       href="{{ route('candidates.edit', $candidate->id) }}" role="button">Edit</a>
+                                       href="{{ route('candidates.edit', $candidate->id) }}" role="button">Accept Or Edit</a>
+                                    <a class="btn btn-warning mb-1" href="{{route('test-online.show', $candidate->id)}}" role="button">Create Exam</a>
                                     <button class="btn btn-danger deleteCandidate mb-1"
-                                            data-candidate-id="{{ $candidate->id }}">Delete
+                                            data-candidate-id="{{$candidate->id}}">Delete
                                     </button>
+                                    <a href="{{route('sendEmail',$candidate->id)}}" class="btn btn-outline-primary mb-1">Send Email</a>
                                 </td>
                             </tr>
                         @endforeach
@@ -78,7 +80,7 @@
          aria-labelledby="custom-width-modalLabel" aria-hidden="true" style="display: none;">
         <div class="modal-dialog" style="width:55%;">
             <div class="modal-content">
-                <form action="" method="POST" class="remove-record-model">
+                <form action="{{route('deleteCandidate')}}" method="POST" class="remove-record-model">
                     @method('DELETE')
                     @csrf
                     <div class="modal-header">
