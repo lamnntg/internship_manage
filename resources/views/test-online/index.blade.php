@@ -10,7 +10,7 @@
         <td>
             @foreach ($testsOnline as $countTest => $testOnline)
             <table id="" class="table table-bordered table-hover">
-                <tr class="text-center"><strong>Test Number {{$countTest + 1}} . Type : {{$testOnline->exam_type}}</strong></tr>
+                <tr class="text-center"><strong>Test Number {{$countTest + 1}} &bullet;  Type : {{$testOnline->exam_type}}  &bullet;  Score : {{$testOnline->score}}</strong></tr>
                 <thead>
                 <tr>
                     <th>Question</th>
