@@ -58,7 +58,7 @@
                                 <td>{{ $candidate->email }}</td>
                                 <td>
                                     <a class="btn btn-primary mb-1"
-                                       href="{{ route('candidates.edit', $candidate->id) }}" role="button">Accept Or Edit</a>
+                                       href="{{ route('candidates.edit', $candidate->id) }}" role="button">Edit</a>
                                     <a class="btn btn-warning mb-1" href="{{route('test-online.show', $candidate->id)}}" role="button">Create Exam</a>
                                     <button class="btn btn-danger deleteCandidate mb-1"
                                             data-candidate-id="{{$candidate->id}}">Delete
