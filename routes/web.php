@@ -62,4 +62,7 @@ Auth::routes([
     'reset' => false
   ]);
 
+Route::get('/{any}', function () {
+    return redirect()->route('homePage');
+})->where('any', '.*')->name('app');
  //Route::get('/administration', 'HomeController@index')->name('home');

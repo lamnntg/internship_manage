@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>OneSchool &mdash; Website by Colorlib</title>
+    <title>OneSchool &mdash; For The Future</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
@@ -107,7 +107,7 @@
         <div class="row mb-5 justify-content-center">
           <div class="col-lg-7 text-center"  data-aos="fade-up" data-aos-delay="">
             <h2 class="section-title">Our Programs</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam repellat aut neque! Doloribus sunt non aut reiciendis, vel recusandae obcaecati hic dicta repudiandae in quas quibusdam ullam, illum sed veniam!</p>
+            <p>Từ năm 2014 chương trình đào tạo được xây dựng mới theo hướng tiếp cận CDIO (Conceive Design Implement Operate) đáp ứng chuẩn đầu ra. Tổng số tín chỉ của chương trình đào tạo của các ngành trung bình là 142 tín chỉ với kế hoạch giảng dạy trong 8 học kỳ và 1 học kỳ thực tập tốt nghiệp.</p>
           </div>
         </div>
         <div class="row mb-5 align-items-center">
@@ -182,7 +182,9 @@
         <div class="row mb-5 justify-content-center">
           <div class="col-lg-7 mb-5 text-center"  data-aos="fade-up" data-aos-delay="">
             <h2 class="section-title">Our Mentor</h2>
-            <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam repellat aut neque! Doloribus sunt non aut reiciendis, vel recusandae obcaecati hic dicta repudiandae in quas quibusdam ullam, illum sed veniam!</p>
+            <p class="mb-5">Thứ nhất, đội ngũ giảng viên đại học cần có trình độ chuyên môn cao, hiểu biết sâu rộng trên nhiều lĩnh vực.
+
+              Cách mạng công nghiệp 4.0 đòi hỏi phải có nguồn nhân lực chất lượng cao, đáp ứng được các yêu cầu về kiến thức, kỹ năng và phẩm chất, vốn liên tục thay đổi trong môi trường lao động mới</p>
           </div>
         </div>
 
@@ -190,21 +192,21 @@
 
           <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="100">
             <div class="mentor text-center">
-              <img src="{{asset("web/images/person_1.jpg")}}" alt="Image" class="img-fluid w-50 rounded-circle mx-auto mb-4">
+              <img src="{{asset("web/images/avatar1.jpg")}}" alt="Image" class="img-fluid w-50 rounded-circle mx-auto mb-4">
               <div class="py-2">
-                <h3 class="text-black">Benjamin Stone</h3>
+                <h3 class="text-black">Nguyen Minh Quang</h3>
                 <p class="position">Physics Teacher</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro eius suscipit delectus enim iusto tempora, adipisci at provident.</p>
+                <p>Cuộc đời này thật ngắn ngủi, đừng dành… dù chỉ một phút cho những người, những việc khiến bạn buồn.</p>
               </div>
             </div>
           </div>
 
           <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="200">
             <div class="mentor text-center">
-              <img src="{{asset("web/images/person_2.jpg")}}" alt="Image" class="img-fluid w-50 rounded-circle mx-auto mb-4">
+              <img src="{{asset("web/images/avatar3.jpg")}}" alt="Image" class="img-fluid w-50 rounded-circle mx-auto mb-4">
               <div class="py-2">
-                <h3 class="text-black">Katleen Stone</h3>
-                <p class="position">Physics Teacher</p>
+                <h3 class="text-black">Nguyen Tung Lam</h3>
+                <p class="position">Leader Teacher</p>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro eius suscipit delectus enim iusto tempora, adipisci at provident.</p>
               </div>
             </div>
@@ -212,11 +214,11 @@
 
           <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="300">
             <div class="mentor text-center">
-              <img src="{{asset("web/images/person_3.jpg")}}" alt="Image" class="img-fluid w-50 rounded-circle mx-auto mb-4">
+              <img src="{{asset("web/images/avatar2.jpg")}}" alt="Image" class="img-fluid w-50 rounded-circle mx-auto mb-4">
               <div class="py-2">
-                <h3 class="text-black">Sadie White</h3>
+                <h3 class="text-black">Tran The Luat</h3>
                 <p class="position">Physics Teacher</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro eius suscipit delectus enim iusto tempora, adipisci at provident.</p>
+                <p>Sự lợi hại thực sự không phải là bạn quen biết bao nhiêu người, mà là vào lúc bạn gặp hoạn nạn, có bao nhiêu người quen biết bạn.</p>
               </div>
             </div>
           </div>
@@ -277,35 +279,6 @@
      
     <footer class="footer-section bg-white">
       <div class="container">
-        <div class="row">
-          <div class="col-md-4">
-            <h3>About OneSchool</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro consectetur ut hic ipsum et veritatis corrupti. Itaque eius soluta optio dolorum temporibus in, atque, quos fugit sunt sit quaerat dicta.</p>
-          </div>
-
-          <div class="col-md-3 ml-auto">
-            <h3>Links</h3>
-            <ul class="list-unstyled footer-links">
-              <li><a href="#">Home</a></li>
-              <li><a href="#">Courses</a></li>
-              <li><a href="#">Programs</a></li>
-              <li><a href="#">Teachers</a></li>
-            </ul>
-          </div>
-
-          <div class="col-md-4">
-            <h3>Subscribe</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt incidunt iure iusto architecto? Numquam, natus?</p>
-            <form action="#" class="footer-subscribe">
-              <div class="d-flex mb-5">
-                <input type="text" class="form-control rounded-0" placeholder="Email">
-                <input type="submit" class="btn btn-primary rounded-0" value="Subscribe">
-              </div>
-            </form>
-          </div>
-
-        </div>
-
         <div class="row pt-5 mt-5 text-center">
           <div class="col-md-12">
             <div class="border-top pt-5">
@@ -313,7 +286,7 @@
         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
         Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-      </p>
+        </p>
             </div>
           </div>
           
